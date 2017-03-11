@@ -22,6 +22,7 @@
 #define MQTT_TOPIC "test"
 
 using namespace std;
+static const char *payload = "{name: %s, temperature: %d, humidity:%d}"
 /*
  * Start here
  */
@@ -52,10 +53,10 @@ int main (int argc, char **argv)
     }
 
   int i;
-  char text[20];
+  char text[100];
   for (i = 0; i < 1; i++)
     {
-    sprintf (text, "Hello, World %d", i);
+    sprintf (text, payload, "hello", 20, 15);
     // Publish the message to the topic
     ret = mosquitto_publish (mosq, NULL, MQTT_TOPIC, strlen (text), text, 0, false);
     if (ret)

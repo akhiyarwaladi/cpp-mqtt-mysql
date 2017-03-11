@@ -54,7 +54,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
         //cout << "Your Name is " << empFirstName << endl;
     }
 
-    query = "INSERT INTO Emp (empName) VALUES('"+pay+"')";
+    query = "INSERT INTO Emp (empName, suhu, tinggi) VALUES('"+pay+"', '20', '20')";
 
     cout << query << endl;
 
