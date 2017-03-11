@@ -22,7 +22,7 @@
 #define MQTT_TOPIC "test"
 
 using namespace std;
-static const char *payload = "{name: %s, temperature: %d, humidity:%d}"
+static const char *payload = "{name: %s, temperature: %d, humidity:%d}";
 /*
  * Start here
  */
