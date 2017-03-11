@@ -14,6 +14,7 @@
 #include <mosquitto.h>
 #include <mysql.h>
 #include <my_global.h>
+#include <string>
 
 // Server connection parameters
 #define MQTT_HOSTNAME "localhost" 
@@ -37,7 +38,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
 //  must free this message structure after processing it.
 	string query, pay;
 	pay = (char *)message->payload;
-	printf ("Got message: %s\n", pay);
+	printf ("Got message: %s\n", pay.c_str());
 	
 	MYSQL *connect;
     connect = mysql_init(NULL);
