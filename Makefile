@@ -12,10 +12,10 @@ all: test-pub test-sub
 LIBS=-lmosquitto -lpthread -lcrypto -lssl -lcares -lmysqlclient
 FLAGS=-Wall -s -I /usr/include/mysql
 
-test-pub: test-pub.c
+test-pub: test-pub.cpp
 	g++ $(FLAGS) -o test-pub test-pub.cpp $(LIBS) $(OPTIONAL_LIBS) 
 
-test-sub: test-sub.c
+test-sub: test-sub.cpp
 	g++ $(FLAGS) -o test-sub test-sub.cpp $(LIBS) $(OPTIONAL_LIBS) 
 
 clean:
