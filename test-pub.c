@@ -51,12 +51,11 @@ int main (int argc, char **argv)
 
   int i;
   char text[20];
-  for (i = 0; i < 10; i++)
+  for (i = 0; i < 1; i++)
     {
     sprintf (text, "Hello, World %d", i);
     // Publish the message to the topic
-    ret = mosquitto_publish (mosq, NULL, MQTT_TOPIC, 
-      strlen (text), text, 0, false);
+    ret = mosquitto_publish (mosq, NULL, MQTT_TOPIC, strlen (text), text, 0, false);
     if (ret)
       {
       fprintf (stderr, "Can't publish to Mosquitto server\n");
