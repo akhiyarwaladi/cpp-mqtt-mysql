@@ -35,6 +35,8 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
 {
 // Note: nothing in the Mosquitto docs or examples suggests that we
 //  must free this message structure after processing it.
+	string query;
+    int res;
 	printf ("Got message: %s\n", (char *)message->payload);
 	
 	MYSQL *connect;
@@ -69,8 +71,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
 int main (int argc, char **argv)
 {
 	struct mosquitto *mosq = NULL;
-	string empFirstName, query;
-    int res;
+
 
 	// Initialize the Mosquitto library
 	mosquitto_lib_init();
