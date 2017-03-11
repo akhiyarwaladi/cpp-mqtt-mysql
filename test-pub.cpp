@@ -5,6 +5,7 @@
  * Copyright (c)2016 Kevin Boone. Distributed under the terms of the 
  *  GPL v3.0 
  */
+#include <iostream>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
