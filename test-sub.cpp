@@ -35,9 +35,10 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
 {
 // Note: nothing in the Mosquitto docs or examples suggests that we
 //  must free this message structure after processing it.
-	string query;
+	string query, pay;
     int res;
-	printf ("Got message: %s\n", (char *)message->payload);
+	pay = (char *)message->payload
+	printf ("Got message: %s\n", pay);
 	
 	MYSQL *connect;
     connect = mysql_init(NULL);
@@ -53,7 +54,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
         //cout << "Your Name is " << empFirstName << endl;
     }
 
-    query = "INSERT INTO Emp (empName) VALUES('"+(char *)message->payload+"')";
+    query = "INSERT INTO Emp (empName) VALUES('"+pay+"')";
 
     cout << query << endl;
 
