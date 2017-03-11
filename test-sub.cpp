@@ -26,7 +26,7 @@
 #define USERNAME "root"
 #define PASSWORD "ncc1p8"
 #define DATABASE "mysqlmqtt"
-
+using namespace std;
 /*
  * my_message_callback. 
  * Called whenever a new message arrives
