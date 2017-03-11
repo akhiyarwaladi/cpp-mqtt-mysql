@@ -21,6 +21,7 @@
 #define MQTT_PASSWORD "admin"
 #define MQTT_TOPIC "test"
 
+using namespace std;
 /*
  * Start here
  */
