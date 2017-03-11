@@ -53,7 +53,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
         //cout << "Your Name is " << empFirstName << endl;
     }
 
-    query = "INSERT INTO Emp (empName) VALUES('"+message+"')";
+    query = "INSERT INTO Emp (empName) VALUES('"+(char *)message->payload+"')";
 
     cout << query << endl;
 
