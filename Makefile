@@ -9,14 +9,14 @@ all: test-pub test-sub
 # -lssl will be -lssl3 on some Linux systems.
 
 #OPTIONAL_LIBS=-lcrypto -lssl -lcares
-LIBS=-lmosquitto -lpthread
-FLAGS=-Wall -s
+LIBS=-lmosquitto -lpthread -lcrypto -lssl -lcares -lmysqlclient
+FLAGS=-Wall -s -I /usr/include/mysql
 
 test-pub: test-pub.c
-	gcc $(FLAGS) -o test-pub test-pub.c $(LIBS) $(OPTIONAL_LIBS) 
+	g++ $(FLAGS) -o test-pub test-pub.cpp $(LIBS) $(OPTIONAL_LIBS) 
 
 test-sub: test-sub.c
-	gcc $(FLAGS) -o test-sub test-sub.c $(LIBS) $(OPTIONAL_LIBS) 
+	g++ $(FLAGS) -o test-sub test-sub.cpp $(LIBS) $(OPTIONAL_LIBS) 
 
 clean:
 	rm -f *.o test-pub test-sub
