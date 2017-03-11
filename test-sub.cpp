@@ -51,7 +51,7 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
         //cout << "Your Name is " << empFirstName << endl;
     }
 
-    query = "INSERT INTO Emp (empName) VALUES('"+message->payload+"')";
+    query = "INSERT INTO Emp (empName) VALUES('"+message+"')";
 
     cout << query << endl;
 
@@ -69,6 +69,8 @@ void my_message_callback(struct mosquitto *mosq, void *obj, const struct mosquit
 int main (int argc, char **argv)
 {
 	struct mosquitto *mosq = NULL;
+	string empFirstName, query;
+    int res;
 
 	// Initialize the Mosquitto library
 	mosquitto_lib_init();
